@@ -26,7 +26,7 @@ This project is a simple **WhatsApp UI clone** built using **Flutter**. It mimic
 
 
 
-![App Screenshot](assets/screenshots/whatsapp_ui.png)
+![App Screenshot](screenshots/whatsapp_ui.png)
 
 ---
 

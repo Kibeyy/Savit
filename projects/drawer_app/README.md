@@ -1,16 +1,32 @@
-# drawer_app
+# 📱 Flutter Drawer App
 
-A new Flutter project.
+A simple and elegant Flutter app demonstrating how to use a **Drawer Navigation**, implement **theme switching** (Dark/Light Mode), and a **bottom navigation bar** – all in one clean layout.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🧭 Drawer Navigation
+- 🌗 Toggle between Light and Dark Mode
+- 📱 Bottom Navigation Bar
+- 🧑 User info in drawer header
+- ⚙️ Clean and modular code
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🎥 Screenshots
+
+| Light Mode | Dark Mode |
+|------------|-----------|
+| ![Light Screenshot](screenshots/light.png) | ![Dark Screenshot](screenshots/dark.png) |
+
+> 💡 Add your screenshots in the `screenshots/` folder.
+
+---
+
+## 🛠️ How to Run
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/drawer_app.git
+   cd drawer_app

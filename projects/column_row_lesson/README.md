@@ -1,16 +1,35 @@
-# column_row_lesson
+# 📐 Flutter Row & Column Layout App
 
-A new Flutter project.
+A clean and minimal Flutter app demonstrating the use of `Row` and `Column` widgets to build structured layouts using containers. Perfect for beginners looking to understand Flutter's layout system.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🧱 **Row Widget** for horizontal layouts
+- 🏗️ **Column Widget** for vertical layouts
+- 🎨 **Styled Containers** with rounded corners and distinct colors
+- 📏 **SizedBox** for spacing between widgets
+- 🧼 Clean and simple UI to focus on layout mechanics
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📸 Screenshot
+
+| Layout Example |
+|----------------|
+| ![Layout Screenshot](screenshots/row_column_layout.png) |
+
+
+
+---
+
+## 🚀 Getting Started
+
+To run this app on your local device:
+
+```bash
+git clone <your-repo-url>
+cd row_column_app
+flutter pub get
+flutter run

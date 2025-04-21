@@ -13,6 +13,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   TextEditingController controller = TextEditingController();
+  bool? isChecked = false;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,7 +44,14 @@ class _MyAppState extends State<MyApp> {
                 ),
 
               ),
-              Text(controller.text)
+              Text(controller.text),
+              Checkbox(
+                  value: isChecked,
+                  onChanged: (value) {
+                    setState(() {
+                      isChecked = value;
+                    });
+                  },)
             ],
           ),
         ),

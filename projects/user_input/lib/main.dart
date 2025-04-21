@@ -4,9 +4,15 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,11 +31,19 @@ class MyApp extends StatelessWidget {
 
                 padding: EdgeInsets.all(15),
                 child: TextField(
+                  controller: controller,
                   decoration: InputDecoration(
                     border: OutlineInputBorder()
                   ),
+                  onEditingComplete: () {
+                    setState(() {
+
+                    });
+                  },
                 ),
-              )
+
+              ),
+              Text(controller.text)
             ],
           ),
         ),

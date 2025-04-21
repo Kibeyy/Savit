@@ -10,7 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(brightness: Brightness.dark,seedColor: Colors.blue)
+      ),
       home: Scaffold(
+
         appBar: AppBar(
           leading: Icon(Icons.notification_add_rounded),
           title: Text("Icons"),

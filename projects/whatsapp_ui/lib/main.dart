@@ -67,7 +67,7 @@ class Whatsapp extends StatelessWidget {
                           Text('Samples messages sent')
                         ],
                       ),
-                      SizedBox(width: 40,),
+                      Spacer(),
                       Padding(
                           padding: EdgeInsets.only(bottom: 20),
                           child: Text('7:41 PM',style: TextStyle(fontStyle: FontStyle.italic),)

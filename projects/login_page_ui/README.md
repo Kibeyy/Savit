@@ -23,11 +23,11 @@ A simple Flutter app showcasing a login and signup interface. This app provides 
 
 #### Login Page:
 
-![Login Page](./assets/login_page.png)
+![Login Page](assets/images/login_page.png)
 
 #### Signup Page:
 
-![Signup Page](./assets/signup_page.png)
+![Signup Page](assets/images/signup_page.png)
 
 ## Requirements
 

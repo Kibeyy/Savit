@@ -33,7 +33,7 @@ This Flutter project demonstrates:
 
 ## 📸 Screenshot
 
-![App Screenshot](assets/images/img.jpg)
+![App Screenshot](assets/images/img.png)
 
 _(Save your screenshot as `assets/images/img.png` to link correctly.)_
 

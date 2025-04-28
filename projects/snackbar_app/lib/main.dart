@@ -21,6 +21,37 @@ void main() {
    @override
    Widget build(BuildContext context) {
      return Scaffold(
+       drawer: Drawer(
+         child: Column(
+           children: [
+             DrawerHeader(
+               decoration: BoxDecoration(color: Colors.blueGrey),
+                 child: SizedBox(
+                   width: double.infinity,
+                   child: Text("Collins Kibe",
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                 )),
+             GestureDetector(
+               onTap: () {
+                 Navigator.of(context).pop();
+
+
+                 ScaffoldMessenger.of(context).showSnackBar(
+                     SnackBar(
+                         behavior: SnackBarBehavior.floating,
+                         content: Text("Logged out successfully"))
+                 );
+               },
+               child: ListTile(
+                 title: Text("Logout"),
+                 trailing: Icon(Icons.logout),
+               ),
+             )
+
+           ],
+         ),
+       ) ,
        appBar: AppBar(
          title: Text("SNACKBAR",
            style: TextStyle(

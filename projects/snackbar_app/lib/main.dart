@@ -66,11 +66,21 @@ void main() {
            children: [
              FilledButton(
                  onPressed: () {
-                   ScaffoldMessenger.of(context).showSnackBar(
-                       SnackBar(
-                           behavior: SnackBarBehavior.floating,
-                           content: Text("Logged out successfully"))
-                   );
+                   showDialog(
+                     context: context,
+                     builder: (context) {
+                     return AlertDialog(
+                       title: Text("Alert title!"),
+                       content: Text("Alert content"),
+                       actions: [
+                         OutlinedButton(
+                             onPressed: () {
+                               Navigator.pop(context);
+                             },
+                             child: Text("Close"))
+                       ],
+                     );
+                   },);
                  },
                  child: Text("Log Out"))
            ],

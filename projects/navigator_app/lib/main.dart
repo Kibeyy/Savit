@@ -30,7 +30,7 @@ void main() {
                    context,
                    MaterialPageRoute(
                      builder: (context) {
-                       return Settings();
+                       return Settings(title: "New Settings",);
                      },),);
                },
                icon: Icon(Icons.settings))

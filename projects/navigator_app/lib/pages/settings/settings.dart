@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Settings extends StatelessWidget {
-  const Settings({super.key});
+  const Settings({super.key,
+    required this.title
+  });
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +13,7 @@ class Settings extends StatelessWidget {
 
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Settings"),
+          title: Text(title),
         ),
         body: Center(
           child: Column(

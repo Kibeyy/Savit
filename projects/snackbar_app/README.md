@@ -1,16 +1,48 @@
-# snackbar_app
+# 📱 Flutter Snackbar & Drawer Example
 
-A new Flutter project.
+This Flutter project demonstrates:
+- Using a **Drawer** with a **DrawerHeader** and **ListTile** items.
+- Showing a **Snackbar** when the user logs out.
+- Closing the Drawer automatically when an item is tapped.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
+- **Drawer** with user's name (`Collins Kibe`) in the header.
+- **Logout** ListTile inside the Drawer:
+    - Closes the Drawer when tapped.
+    - Displays a floating Snackbar with the message: _"Logged out successfully"_.
+- **FilledButton** on the main screen body:
+    - Shows the same Snackbar when pressed.
+- Clean UI with `AppBar`, `Drawer`, and centered button.
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🛠 Technologies Used
+- **Flutter** (SDK)
+- **Material Design** widgets:
+    - `Scaffold`
+    - `AppBar`
+    - `Drawer`
+    - `DrawerHeader`
+    - `ListTile`
+    - `SnackBar`
+    - `FilledButton`
+    - `GestureDetector`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 📸 Screenshot
+
+![App Screenshot](assets/images/img.png)
+
+---
+
+## 📂 How to Run
+1. Make sure Flutter SDK is installed.
+2. Clone or download this project.
+3. Run the following commands:
+
+```bash
+flutter pub get
+flutter run

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app_ui/widgets/food_item.dart';
 import 'package:food_app_ui/widgets/location_icon.dart';
 
 void main() {
@@ -43,9 +44,7 @@ class Home extends StatelessWidget {
         ],
       ),
       body: Center(
-        child: Column(
-          children: [],
-        ),
+        child: FoodItem(),
       ),
     );
   }

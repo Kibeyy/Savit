@@ -1,16 +1,28 @@
-# shared_preferences_app
+# 🌓 Flutter Shared Preferences Theme Toggle
 
-A new Flutter project.
+This is a simple Flutter app demonstrating how to use `SharedPreferences` to store and retrieve the user's theme mode preference (light or dark mode).
 
-## Getting Started
+## 🚀 Features
 
-This project is a starting point for a Flutter application.
+- Toggle between **Light Mode** and **Dark Mode**
+- Save the theme mode using `SharedPreferences`
+- Restore the last selected theme mode on app restart
+- Uses `ValueNotifier` + `ValueListenableBuilder` for reactive UI updates
 
-A few resources to get you started if this is your first Flutter project:
+## 🖼 Screenshot
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<!-- Replace this with your image -->
+![screenshot](screenshots/img.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🧠 How It Works
+
+- A global `ValueNotifier<bool>` named `isDarkModeOn` stores the current theme state.
+- When the user taps the dark mode icon, the theme is toggled and saved locally.
+- On app start, the saved preference is loaded using `SharedPreferences` in `initState`.
+
+### 🌙 Toggling Theme
+
+```dart
+isDarkModeOn.value = !isDarkModeOn.value;
+final prefs = await SharedPreferences.getInstance();
+await prefs.setBool('themeMode', isDarkModeOn.value);

@@ -14,6 +14,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   TextEditingController controller = TextEditingController();
   bool? isChecked = false;
+  bool isSwitchedOn = false;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -51,7 +52,12 @@ class _MyAppState extends State<MyApp> {
                     setState(() {
                       isChecked = value;
                     });
-                  },)
+                  },),
+              Switch(value: isSwitchedOn, onChanged: (value) {
+                setState(() {
+                  isSwitchedOn = value;
+                });
+              },)
             ],
           ),
         ),

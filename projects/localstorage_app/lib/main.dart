@@ -2,66 +2,84 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
-
+  WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-  var box = await Hive.openBox("myBox");
-
-  runApp(const MyApp());
+  await Hive.openBox('todoBox'); // Box for storing tasks
+  runApp(MyApp());
 }
- class MyApp extends StatelessWidget {
-   const MyApp({super.key});
 
-   @override
-   Widget build(BuildContext context) {
-     return const MaterialApp(
-       debugShowCheckedModeBanner: false,
-       home: Home(),
-     );
-   }
- }
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Hive To-Do',
+      home: HomePage(),
+    );
+  }
+}
 
- class Home extends StatelessWidget {
-   const Home({super.key});
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
 
-   @override
-   Widget build(BuildContext context) {
-     final _myBox = Hive.box("myBox");
-     return Scaffold(
-       body: Center(
-         child: Column(
-           mainAxisAlignment: MainAxisAlignment.center,
-           children: [
-             FilledButton(
-                 onPressed: () {
-                   _myBox.put(1, "Collins");
-                   ScaffoldMessenger.of(context).showSnackBar(
-                     SnackBar(
-                       behavior: SnackBarBehavior.floating,
-                       content: Text("${_myBox.get(1)} was added"),
-                     ),
-                   );
+class _HomePageState extends State<HomePage> {
+  final _taskController = TextEditingController();
+  final Box _box = Hive.box('todoBox');
 
-                 },
-                 child: Text("ADD ITEM")
-             ),
-             FilledButton(
-                 onPressed: () {
+  void _addTask(String task) {
+    if (task.trim().isEmpty) return;
+    _box.add(task);
+    _taskController.clear();
+    setState(() {});
+  }
 
-                 },
-                 child: Text("GET ITEM")
-             ),
-             FilledButton(
-                 onPressed: () {
+  void _deleteTask(int index) {
+    _box.deleteAt(index);
+    setState(() {});
+  }
 
-                 },
-                 child: Text("DELETE ITEM")
-             )
+  @override
+  Widget build(BuildContext context) {
+    final tasks = _box.values.toList();
 
-           ],
-         ),
-       ),
-
-     );
-   }
- }
-
+    return Scaffold(
+      appBar: AppBar(title: Text('Hive To-Do')),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: _taskController,
+                    decoration: InputDecoration(hintText: 'Enter task'),
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.add),
+                  onPressed: () => _addTask(_taskController.text),
+                )
+              ],
+            ),
+          ),
+          Expanded(
+            child: tasks.isEmpty
+                ? Center(child: Text('No tasks yet'))
+                : ListView.builder(
+              itemCount: tasks.length,
+              itemBuilder: (_, index) => ListTile(
+                title: Text(tasks[index]),
+                trailing: IconButton(
+                  icon: Icon(Icons.delete, color: Colors.red),
+                  onPressed: () => _deleteTask(index),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

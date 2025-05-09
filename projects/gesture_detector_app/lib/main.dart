@@ -20,7 +20,8 @@ class _MyAppState extends State<MyApp> {
           title: Text("GESTURE DETECTIONS")
           ,
         ),
-        body: GestureDetector(
+        body: InkWell(
+          splashColor: Colors.blue,
           onTap: () {
             print("Image Clicked!");
           },
@@ -44,6 +45,11 @@ class _MyAppState extends State<MyApp> {
                         sliderValue = value;
                       });
                     },
+                ),
+                Container(
+                  width: double.infinity,
+                  height: 200,
+                  color: Colors.red,
                 )
 
               ],

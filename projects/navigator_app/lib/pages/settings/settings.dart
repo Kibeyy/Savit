@@ -14,6 +14,7 @@ class Settings extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(title),
+          automaticallyImplyLeading: false,
         ),
         body: Center(
           child: Column(

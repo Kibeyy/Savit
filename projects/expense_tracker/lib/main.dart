@@ -1,3 +1,7 @@
+import 'package:expense_tracker/features/onboarding/screens/onboarding.dart';
+import 'package:expense_tracker/features/onboarding/widgets/automatedfields_onboarding.dart';
+import 'package:expense_tracker/features/onboarding/widgets/insights_onboarding.dart';
+import 'package:expense_tracker/features/onboarding/widgets/savings_onboarding.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,8 +16,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF5956F2))
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF5956F2),
+        //setting theme to dark mode
+          brightness: Brightness.light
+        ),
+        useMaterial3: true,
       ),
+
       home: Home(),
     );
   }
@@ -24,9 +33,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
-    );
+    return Onboarding();
   }
 }
 

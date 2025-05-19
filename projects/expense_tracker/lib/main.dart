@@ -1,3 +1,4 @@
+import 'package:expense_tracker/features/auth/screens/signup_screen.dart';
 import 'package:expense_tracker/features/onboarding/screens/onboarding.dart';
 import 'package:expense_tracker/features/onboarding/widgets/automatedfields_onboarding.dart';
 import 'package:expense_tracker/features/onboarding/widgets/insights_onboarding.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      home: Home(),
+      home: Onboarding(),
     );
   }
 }

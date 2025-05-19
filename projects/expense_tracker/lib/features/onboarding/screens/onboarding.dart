@@ -1,4 +1,5 @@
 import 'package:expense_tracker/data/value_notifiers/value_notifier.dart';
+import 'package:expense_tracker/features/auth/screens/signup_screen.dart';
 import 'package:expense_tracker/features/onboarding/widgets/automatedfields_onboarding.dart';
 import 'package:expense_tracker/features/onboarding/widgets/insights_onboarding.dart';
 import 'package:expense_tracker/features/onboarding/widgets/savings_onboarding.dart';
@@ -45,6 +46,7 @@ class _OnboardingState extends State<Onboarding> {
 
                     Container(
                       alignment: Alignment(0, 0.75),
+                      //previous onboarding screen button
                       child: (currentPage == 1 || currentPage == 2)
                         ? SizedBox(
                         width: double.infinity,
@@ -105,9 +107,11 @@ class _OnboardingState extends State<Onboarding> {
                             ),
                             onPressed: () {
                               //making the button scroll to next page
-                              _controller.nextPage(
-                                  duration: Duration(milliseconds: 500),
-                                  curve: Curves.easeIn);
+                              Navigator.pushReplacement(context, MaterialPageRoute(
+                                  builder: (context) {
+                                    currentOnboardingPage.value = 0;
+                                    return SignupScreen();
+                                  },));
 
                             },
                             child: Text("Done")),
